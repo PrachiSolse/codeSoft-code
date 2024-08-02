@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class gradeclc {
+    public static void main(String[] args){
+        int totalsubject;
+        int marks[] = new int[56],i;
+        String grade = " ";
+        int totalmarks=0,avg;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of subject: ");
+        totalsubject = input.nextInt();
+        for(i=0;i<totalsubject;i++){
+            System.out.print("enter the marks: ");
+            marks[i] = input.nextInt();
+            totalmarks = totalmarks + marks[i];
+        }
+        System.out.println("total marks = "+totalmarks);
+        avg = totalmarks/totalsubject;
+        System.out.println("average is : "+avg);
+        if(avg>=90){
+            grade = "O";
+            System.out.println("Outstanding performance !! keep it up");
+        }
+        else if(avg>=80){
+            grade = "A+";
+            System.out.println("Excellent !! Well done");
+        }
+        else if(avg>=70){
+            grade = "A";
+            System.out.println("good !! keep trying");
+        }
+        else if(avg>=60){
+            grade = "B+";
+            System.out.println("Not bad!! try hard ");
+        }
+        else if(avg>=50){
+            grade = "B";
+            System.out.println("try hard!!never give up");
+        }
+        else if(avg>=40){
+            grade = "C+";
+            System.out.println("keep trying!!Better luck next time");
+        }
+        else{
+            grade = "C";
+            System.out.println("You need to try hard . Don't lose hope!!");
+        }
+        System.out.println("student's grade is: "+grade);
+    }
+}
