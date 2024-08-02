@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class guessnumber {
+    public static void numbergame(){
+        Scanner input = new Scanner(System.in);
+        int secretnumber = 1 + (int)
+        (100*Math.random());
+        int maxattempts = 5;
+        int guess,i;
+        System.out.println("Hello participant!Wellcome to the number game");
+        System.out.println("the secret number is in between 1 to 100");
+        System.out.println("You have 5 chances to guess the number");
+        System.out.println("soooooooo!! Let the game begin!!!!!!");
+        for(i=0;i<=5;i++){
+            System.out.println("Eneter your guess number "+(i+1)+" :");
+            guess = input.nextInt();
+            if(secretnumber==guess){
+                System.out.println("Biggest congragulations!!You have gueesed correct secret number" );
+                break;
+            }
+            else if(secretnumber>guess && i!=maxattempts - 1){
+                System.out.println("Your guess number is lesser than secret number");
+            }
+            else if(secretnumber<guess && i!=maxattempts-1){
+                System.out.println("Your guess number is higher than secret number"); 
+            }
+            else if(i<=5){                
+                System.out.println("Ooops!!Your attempts were exhausted");
+                System.out.println("Better luck next time!!");
+                System.out.println("Your secret number was: "+secretnumber);
+                
+            
+            }
+        }
+    }
+    public static void main(String[] args){
+        numbergame();
+    }
+}
